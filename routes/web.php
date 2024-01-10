@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::resource('employee', EmployeeController::class)->middleware('auth');
+
+//custom
+Route::get('/service', [ServiceController::class, 'index'])->name('service.index');
+Route::get('service/create', [ServiceController::class, 'create'])->name('service.create');
+Route::post('service/store',[ServiceController::class,'store'])->name('service.store');
+Route::get('service/{service}/edit', [ServiceController::class, 'edit'])->name('service.edit');
+Route::get('service/{service}/show', [ServiceController::class, 'show'])->name('service.show');
+Route::put('service/{service}',[ServiceController::class,'update'])->name('service.update');
+Route::delete('service/{service}',[ServiceController::class,'destroy'])->name('service.destroy');
+
