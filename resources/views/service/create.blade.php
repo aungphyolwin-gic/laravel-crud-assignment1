@@ -25,8 +25,9 @@
                         <div class="form-group m-3 row">
                           <label for="about" class="col-sm-6 col-form-label">About Service</label>
                           <div class="col-sm-6">
-                            <input type="text" name="about" class="form-control"  value="{{ old('detail') }}">
-                           
+                            <textarea type="text" name="about" class="form-control" >{{ old('detail') }}
+                              
+                            </textarea>
                           </div>
                         </div>
                         <div class="form-group m-3 row">
